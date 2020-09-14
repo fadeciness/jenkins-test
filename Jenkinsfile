@@ -18,8 +18,10 @@ pipeline {
             }
         }
         stage('Build') {
-            echo '========== Build stage! =========='
-            ls -la
+            steps {
+                echo '========== Build stage! =========='
+                sh 'ls -la'
+            }
         }
     }
 
