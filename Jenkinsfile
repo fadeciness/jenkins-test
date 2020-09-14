@@ -21,6 +21,7 @@ pipeline {
             steps {
                 echo '========== Build stage! =========='
                 sh 'ls -la'
+                sh 'pwd'
             }
         }
     }
