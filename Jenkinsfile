@@ -24,12 +24,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo '========== Build stage! =========='
-                sh 'ls -la'
-                sh 'pwd'
-                sh 'rm -rf tests || true'
-                sh 'git clone https://github.com/fadeciness/tests'
-                sh 'ls -la'
-                sh 'pwd'
+                sh 'mvn clean package install'
+                build job: 'tests', propagate: true, wait: true
+            }
+        }
+        stage('End') {
+            steps {
+                echo '========== End stage! =========='
             }
         }
     }
