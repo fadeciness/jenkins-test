@@ -22,6 +22,9 @@ pipeline {
                 echo '========== Build stage! =========='
                 sh 'ls -la'
                 sh 'pwd'
+                sh 'git clone https://github.com/fadeciness/jenkins-test'
+                sh 'ls -la'
+                sh 'pwd'
             }
         }
     }
