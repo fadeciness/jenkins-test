@@ -25,7 +25,7 @@ pipeline {
             steps {
                 echo '========== Build stage! =========='
                 sh 'mvn clean package install'
-                build job: 'tests', propagate: true, wait: true
+                //build job: 'tests', propagate: true, wait: true
             }
         }
         stage('End') {
