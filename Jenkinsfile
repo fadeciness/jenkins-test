@@ -42,23 +42,24 @@ pipeline {
                 sh """echo VERSION = '${params.VERSION}' """
                 echo "My variable is ${myVariable}"
                 script {
-                if (params.VERSION=='0.0.9') {
-                    myVariable='one'
-                    sh """echo myVariable = '${myVariable}' """
-                } else if (params.VERSION=='0.0.15') {
-                    myVariable='two'
-                    sh """echo myVariable = '${myVariable}' """
-                } else {
-                    myVariable='three'
-                    sh """echo myVariable = '${myVariable}' """
-                }
-
+                    if (params.VERSION=='0.0.9') {
+                        myVariable='one'
+                        sh """echo myVariable = '${myVariable}' """
+                    } else if (params.VERSION=='0.0.15') {
+                        myVariable='two'
+                        sh """echo myVariable = '${myVariable}' """
+                    } else {
+                        myVariable='three'
+                        sh """echo myVariable = '${myVariable}' """
+                    }
                 }
                 echo '========== End stage! =========='
             }
         }
         stage('Post-ENd') {
-            sh """echo myVariable = '${myVariable}' """
+            steps {
+                sh """echo myVariable = '${myVariable}' """
+            }
         }
     }
 
