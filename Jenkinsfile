@@ -40,7 +40,7 @@ pipeline {
         stage('End') {
             steps {
                 sh """echo VERSION = '${params.VERSION}' """
-                myVariable=$(echo '${params.VERSION}')
+
                 echo "My variable is ${myVariable}"
                 script {
                     if ('12' as Integer >= 9) {
