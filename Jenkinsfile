@@ -36,7 +36,9 @@ pipeline {
             }
         }
         stage('End') {
+            params.VERSION='0.5.5'
             steps {
+                sh """echo VERSION = '${params.VERSION}' """
                 echo '========== End stage! =========='
             }
         }
