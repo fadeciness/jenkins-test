@@ -42,10 +42,10 @@ pipeline {
                 sh """echo VERSION = '${params.VERSION}' """
                 echo "My variable is ${myVariable}"
                 script {
-                if (params.VERSION='0.0.9') {
+                if (params.VERSION=='0.0.9') {
                     myVariable='one'
                     sh """echo myVariable = '${myVariable}' """
-                } else if (params.VERSION='0.0.15') {
+                } else if (params.VERSION=='0.0.15') {
                     myVariable='two'
                     sh """echo myVariable = '${myVariable}' """
                 } else {
