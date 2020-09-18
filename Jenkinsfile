@@ -13,6 +13,7 @@ pipeline {
 
     stages {
         stage('Checkout') {
+            echo ${params.VERSION}
             steps {
                 checkout([
                     $class: 'GitSCM',
