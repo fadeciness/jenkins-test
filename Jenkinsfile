@@ -13,7 +13,6 @@ pipeline {
 
     stages {
         stage('Checkout') {
-            echo ${params.VERSION}
             steps {
                 checkout([
                     $class: 'GitSCM',
@@ -30,6 +29,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo '========== Build stage! =========='
+                sh """echo VERSION = '${params.VERSION}' """
                 sh 'mvn clean package install'
                 //build job: 'tests', propagate: true, wait: true
             }
