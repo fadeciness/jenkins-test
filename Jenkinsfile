@@ -43,6 +43,11 @@ pipeline {
                 myVariable=$(echo '${params.VERSION}')
                 echo "My variable is ${myVariable}"
                 script {
+                    if ('12' as Integer >= 9) {
+                    sh """echo 'UPPY' """
+                    }
+
+
                     if (params.VERSION=='0.0.9') {
                         myVariable='one'
                         sh """echo myVariable = '${myVariable}' """
