@@ -40,7 +40,7 @@ pipeline {
         stage('End') {
             steps {
                 sh """echo VERSION = '${params.VERSION}' """
-                myVariable=${params.VERSION}
+                myVariable=echo ${params.VERSION}
                 echo "My variable is ${myVariable}"
                 script {
                     if (params.VERSION=='0.0.9') {
