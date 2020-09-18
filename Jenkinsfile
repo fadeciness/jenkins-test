@@ -30,6 +30,7 @@ pipeline {
             steps {
                 echo '========== Build stage! =========='
                 sh """echo VERSION = '${params.VERSION}' """
+                sh """echo VERSION2 = '${params.VERSIONSECOND}' """
                 sh 'mvn clean package install'
                 //build job: 'tests', propagate: true, wait: true
             }
