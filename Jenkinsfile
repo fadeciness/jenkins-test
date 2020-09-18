@@ -6,6 +6,11 @@ pipeline {
         skipDefaultCheckout()
     }
 
+    parameters {
+        string(name: 'VERSION', defaultValue: '0.0.9', description: 'Version')
+        string(name: 'VERSIONSECOND', defaultValue: '0.2.9', description: 'Version')
+    }
+
     stages {
         stage('Checkout') {
             steps {
