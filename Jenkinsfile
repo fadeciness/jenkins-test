@@ -43,7 +43,7 @@ pipeline {
 
                 echo "My variable is ${myVariable}"
                 script {
-                    if ('12' as Integer >= 9 as Integer) {
+                    if ("12" >= 9) {
                     sh """echo 'UPPY' """
                     }
 
