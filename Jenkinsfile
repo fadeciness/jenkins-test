@@ -30,6 +30,7 @@ pipeline {
         }
         stage('Build') {
             steps {
+                error("BREAK")
                 echo '========== Build stage! =========='
                 sh """echo VERSION = '${params.VERSION}' """
                 sh """echo VERSION2 = '${params.VERSIONSECOND}' """
